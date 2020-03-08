@@ -1,0 +1,6 @@
+= Candidate Assignment
+
+== Development
+
+This solution uses https://immutables.github.io[immutables.io] for generating immutable classes from defined interfaces in the model. See https://immutables.github.io/apt.html[Using annotation processor in the IDE]
+for instructions in how to configure your IDE for taking benefit of the annotation processor.

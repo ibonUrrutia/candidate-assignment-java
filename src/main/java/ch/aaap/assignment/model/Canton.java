@@ -1,10 +1,11 @@
 package ch.aaap.assignment.model;
 
+import org.immutables.value.Value.Immutable;
+
+@Immutable
 public interface Canton {
 
-  public String getCode();
+  String getCode();
 
-  public String getName();
-
-  // TODO add more features here representing the relations
+  String getName();
 }

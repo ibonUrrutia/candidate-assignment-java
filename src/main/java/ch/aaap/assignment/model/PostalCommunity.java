@@ -1,12 +1,22 @@
 package ch.aaap.assignment.model;
 
+import org.immutables.value.Value.Immutable;
+
+import java.util.Set;
+
+@Immutable
 public interface PostalCommunity {
 
-  public String getZipCode();
+  @Immutable
+  interface ZipCode {
+    String getZipCode();
 
-  public String getZipCodeAddition();
+    String getZipCodeAddition();
+  }
 
-  public String getName();
+  ZipCode getZipCode();
 
-  // TODO add more features here representing the relations
+  String getName();
+
+  Set<PoliticalCommunity> getPoliticalCommunities();
 }

@@ -1,0 +1,4 @@
+= Proposed Solution
+
+== Assumptions
+* There was not any limit in the libraries to use

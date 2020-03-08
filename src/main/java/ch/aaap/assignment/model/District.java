@@ -1,10 +1,13 @@
 package ch.aaap.assignment.model;
 
+import org.immutables.value.Value.Immutable;
+
+@Immutable
 public interface District {
 
-  public String getNumber();
+  String getNumber();
 
-  public String getName();
+  String getName();
 
-  // TODO add more features here representing the relations
+  Canton getCanton();
 }
