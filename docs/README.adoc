@@ -1,6 +1,30 @@
 = Candidate Assignment
+:author: Ibon Urrutia<ibon.urrutia@pm.me>
+
+Solution of {author} for 3AP https://github.com/3AP-AG/candidate-assignment-java[candidate assignment].
+See link:proposed_solution.adoc[proposed solution document] for details.
+
+== Build
+[code,bash]
+----
+$ mvn package
+----
+
+== Configure
+The library read two csv stored at `src/main/resources` : if there is any change in
+political communities (for example due to a city referendum) or there is any change in postal
+communities (for example due to the creation of new zip codes), you will have to load
+the new data in csv format.
+
+* __GDE.csv__
+Lists all political communities in Switzerland.
+Source: https://www.bfs.admin.ch/bfs/de/home/grundlagen/agvch.html[Amtliches Gemeindeverzeichnis der Schweiz]
+
+* __PLZ6.csv__
+Lists all postal communities in Switzerland.
+Source: https://www.bfs.admin.ch/bfs/de/home/grundlagen/agvch/gwr-korrespondenztabelle.assetdetail.7226419.html[Eidgenössisches Gebäude- und Wohnungsregister - Umwandlung von PLZ in BFS-Gemeindenummer]
+
 
 == Development
-
 This solution uses https://immutables.github.io[immutables.io] for generating immutable classes from defined interfaces in the model. See https://immutables.github.io/apt.html[Using annotation processor in the IDE]
 for instructions in how to configure your IDE for taking benefit of the annotation processor.

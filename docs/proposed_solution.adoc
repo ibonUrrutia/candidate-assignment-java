@@ -1,4 +1,33 @@
 = Proposed Solution
+:immutables-io: https://immutables.github.io[immutables]
+:guava: https://github.com/google/guava[guava]
 
 == Assumptions
-* There was not any limit in the libraries to use
+
+* There was not any limit in the libraries to use.
+I have included 2 new dependencies: {immutables-io}, for generating the immutable classes from the interfaces,
+and {guava}, for making use of their immutable collections and builders.
+* We were free to elect the implementation: although the project was using Lombok, I used
+{immutables-io} for implementing the model.
+We can discuss the advantages and disadvantages of my approach.
+* There are maybe faster implementations of the use cases but:
+** I preferred clarity to performance.
+** For such small number of elements in the collections the initialization of the model tooks around 50-60ms, and all the use cases are bellow 35ms.
+As I don't know which use cases are going to be used in which context, I think that trying to improve this numbers was a waste of time.
+** As all the model is immutable just caching the result of the calls will provide any performance boost in the final application.
+
+== Solution
+=== Assignment 1
+Done at https://github.com/ibonUrrutia/candidate-assignment-java
+
+=== Assignment 2, Assignment 3, Assignment 4
+Done at https://github.com/ibonUrrutia/candidate-assignment-java/tree/feature/assignment_2_implement_model
+
+=== Assignment 5
+* I discovered there are cases where the zip code is not enough for identifying a community and you should
+put also the name of the political community. I assume that the address can give some hint to the post office
+if somebody forgets to put the name of the community, but that could be a problem if there are streets with the same name in different political communities.
+* Same zip code can be repeated for different communities with different districts and in some cases even different cantons.
+* I would recommend more unit tests for checking the most extreme cases (passing null, empty strings) and
+_funny_ cases (same postal code different cantons, same postal code different districts), just for be sure
+there are not more surprises.
